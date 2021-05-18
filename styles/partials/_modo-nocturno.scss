@@ -1,0 +1,214 @@
+.dark-mode {
+    background-color: $dark-gray-color;
+
+    h2 {
+        color: white;
+    }
+
+    header {
+        background-color: $dark-gray-color;
+        border-top: 5px solid black;
+
+        .form-scroll {
+            input {
+                border: 1px solid white;
+                background-color: $dark-gray-color;
+                color: white;
+            }
+    
+            button svg use{
+                fill: white;
+            }
+        }
+
+        .close use, .burger use {
+            fill: white;
+        } 
+    
+        nav {
+            background-color: black;
+            opacity: 1;
+        }
+
+        @media screen and (min-width: $desktop-breakpoint) {
+
+            nav {
+                background-color: transparent;
+    
+                ul li a {
+                    color: white;
+                }
+    
+                span {
+                    background-color: white;
+                }
+    
+                span::after {
+                    background-color: white;
+                }
+    
+                .button-crear-gifo {
+                    border: 1px solid white;
+
+                    &:hover {
+                        background-color: white;
+                        border: 1px solid white;
+                    }
+
+                    &:hover > span {
+                        background-color: black;
+                    }
+
+                    &:hover > span::after {
+                        background-color: black;
+                    }
+                }
+
+                .button-crear-gifo-active {
+                    background-color: $gray-color;
+                    border: 1px solid $gray-color;
+                }
+            }
+        }
+    }
+
+    #search {
+        h1 {
+            color: white;
+        }
+    
+        form {
+            background-color: $dark-gray-color;
+            border: 1px solid white;
+    
+        }
+    
+        input {
+            background-color: $dark-gray-color;
+            color: white;
+        }
+    
+        .search-icon svg use, .clear-button svg use{
+            fill: white;
+        }
+    
+        .trending-list {
+            color: white;
+        }
+    
+    }
+
+    #trending {
+        background-color: $dark-gray2-color;
+
+        p {
+            color: white;
+        }
+
+        .slider-button {
+            svg g {
+                fill: $dark-gray2-color;
+                transition: fill .2s;
+            }
+
+            svg g path {
+                stroke: white;
+            }
+
+            svg use {
+                fill: white;
+                transition: fill .2s;
+            }
+
+            &:hover svg g {
+                fill: white;
+            }
+
+            &:hover svg use {
+                fill: $dark-gray2-color;
+            }
+        }
+    }
+
+    footer {
+        border-bottom: 5px solid black;
+
+        p {
+            color: white;
+        }
+
+        ul li {
+            &:hover > a > img {
+                filter: $white-icon;
+                transform: scale(1.1);
+            }
+        }
+    }
+
+    .gif-max-modal {
+        background-color: rgba($color: #000000, $alpha: 0.9);
+
+        .close-modal svg use {
+            fill: white;
+        }
+
+        p {
+            color: white;
+        }
+    }
+
+    .button {
+        background-color: $dark-gray-color;
+        color: white;
+        border: 1px solid white;
+
+        &:hover {
+            background-color: white;
+            color: black;
+        }
+    }
+
+    #crear-gifo {
+
+        .frame {
+            border: 1px solid white;        
+        }
+    
+        &>div:last-of-type::after {
+            background-color: white;
+        }
+    
+        p {
+            color: white;
+        }
+    
+        li {
+            color: white;
+            border: 1px solid white;
+
+            &.stepActive {
+                color: black;
+                background-color: white;
+            }
+        }
+    }
+
+    .pagination {
+        .pagination-button {
+            svg path {
+                fill: white;
+            }
+        }
+
+        .pagination-list {
+            .pagination-number {
+                color: white;
+
+                &.pagination-number-active {
+                    color: black;
+                    background-color: white;
+                }
+            }
+        }
+    }
+}

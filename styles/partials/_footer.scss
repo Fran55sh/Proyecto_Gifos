@@ -1,0 +1,42 @@
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border-bottom: 5px solid $purple-color;
+    padding-top: 3rem;
+    padding-bottom: 1rem;  
+
+    @include roboto-regular(15px);
+
+    ul li {
+        display: inline-block;
+        padding: 1rem;
+
+        img {
+            filter: $gray-icon;
+            transition: filter, transform 0.3s;
+        }
+
+        &:hover > a > img {
+            filter: $purple-icon;
+            transform: scale(1.1);
+        }
+    }
+
+    @media screen and (min-width: $desktop-breakpoint) {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0 15rem;
+        height: 116px;
+
+        div {
+            display: flex;
+            align-items: center;
+
+            ul {
+                margin-left: 2rem;
+            }
+        }
+    }
+}

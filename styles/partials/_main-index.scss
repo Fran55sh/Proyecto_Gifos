@@ -1,0 +1,203 @@
+#search {
+
+    h1 {
+        color: $purple-color;
+        text-align: center;
+        width: 70%;
+
+        @include montserrat-bold(2.5rem);
+    }
+
+    .search-block {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        max-width: 550px;
+        position: relative;
+        margin-bottom: 6rem;
+
+        form {
+            width: 90%;
+            position: absolute;
+            top: 100%;
+            transform-origin: top;
+            background-color: white;
+            border: 1px solid $purple-color;
+            border-radius: 27px;
+            max-height: 50px;
+            overflow: hidden;
+            transition: max-height .3s ease-in-out;
+
+            &.suggestions {
+                border-radius: 27px;
+                max-height: 300px;
+                transition: max-height .3s ease-in-out;
+            }
+
+            &.suggestions:before {
+                content: '';
+                display: block;
+                width: 92%;
+                height: 1px;
+                background-color: $gray-color;
+                position: absolute;
+                top: 45px;
+                margin: 0 4%;
+            }
+
+            ul li {
+                color: $gray-color;
+                padding: 0.5rem 5rem;
+
+                @include roboto-regular(1.6rem)
+            }
+
+        }
+
+        &> img {
+            width: 70%;
+        }
+
+        input {
+            color: black;
+            padding: 1.3rem 5rem;
+            width: 100%;
+            display: inline-block;
+            outline: none;
+            border: none;
+            background-color: transparent;
+
+            @include roboto-regular(1.6rem);
+        }
+
+        input::placeholder {
+            color: #9CAFC3;
+        }
+
+        button {
+            position: absolute;
+            top: 11px;
+            background-color: transparent;
+            border: none;
+            outline: none;
+            right: 15px;
+        }
+
+        .input-active-icon {
+            right: initial;
+            left: 15px; 
+            
+            svg use {
+                fill: $gray-color;
+            }
+        }
+
+        .clear-button {
+            top: 15px
+        }
+
+        .suggestion-item {
+            display: flex;
+            position: relative;
+            align-items: center;
+            height: 25px;
+            margin-bottom: 10px;
+            cursor: pointer;
+
+            button {
+                left: 15px;
+                width: 15px;
+                transform: scale(0.7);
+                top: 0;
+            }
+        }
+    }
+
+    .trending-list {
+        text-align: center;
+        color: $purple-color;
+        margin-top: 3rem;
+        padding: 4rem;
+        margin-bottom: 5rem;
+
+        p {
+            margin: 0;
+
+            &:first-of-type {
+                @include montserrat-bold(1.6rem);
+
+                margin-bottom: 1rem;
+            }
+
+            &:last-of-type {
+                @include montserrat-medium(1.4rem);
+
+                line-height: 2.5rem;
+            }
+
+            span {
+                text-transform: capitalize;
+                cursor: pointer;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+
+            }
+        }
+    }
+
+    .results-search {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        h2 {
+            font-size: 2.5rem;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            &::before {
+                content: "";
+                display: block;
+                position: absolute;
+                width: 157px;
+                height: 1px;
+                background-color: $gray-color;
+                top: -48px
+            }
+        
+            @media screen and (min-width: $desktop-breakpoint){
+                font-size: 3.5rem;
+
+                &::before {
+                    width: 338px;
+                }
+            }
+        }
+
+        .no-results {
+            display: block;
+            margin-top: 9rem;
+            margin-bottom: 2rem;
+        }
+
+        .no-results-text {
+            @include montserrat-bold(2.2rem);
+            color: $lightblue-color;
+            margin-bottom: 5rem;
+        }
+    }
+
+    @media screen and (min-width: $desktop-breakpoint) {
+        h1 {
+            font-size: 3.5rem;
+            width: 600px;
+            margin-top: 7rem;
+        }
+
+    }
+}

@@ -1,0 +1,276 @@
+header {
+    align-content: flex-start;
+    align-items: center;
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    height: 10rem;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 4;
+    border-top: 5px solid $purple-color;
+    box-shadow: 0;
+    transition: box-shadow .5s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+    &> a {
+        padding: 3rem 2.5rem 1.3rem 2.5rem;
+    }
+
+    .burger, .close {
+        margin-top: 3rem;
+        margin-right: 2.5rem;
+    }
+
+    &.header-scroll {
+        box-shadow: 0 2px 4px 1px rgba(156,175,195,0.55);
+    }
+
+    .form-scroll {
+        padding: 0 2rem;
+        position: relative;
+        display: none;
+
+        input {
+            border: 1px solid $purple-color;
+            border-radius: 27px;
+            color: black;
+            padding: 1.3rem 5rem;
+            width: 100%;
+            display: inline-block;
+            outline: none;            
+
+            @include roboto-regular(1.6rem);
+        }
+
+        input::placeholder {
+            color: #9CAFC3;
+        }
+
+        button {
+            position: absolute;
+            top: 13px;
+            right: 35px;
+            background-color: transparent;
+            border: none;
+            outline: none;
+        }
+    }
+
+    nav {
+        align-self: flex-end;
+        background-color: $purple-color;
+        transform-origin: top;
+        transform: scaleY(0);
+        transition: transform .2s;
+        width: 100%;
+        height: 100vh;
+        opacity: 0.9;
+
+        ul {
+            padding: 0;
+        }
+
+        ul li {
+            text-align: center;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            &::after {
+                content: "";
+                width: 40px;
+                height: 1px;
+                background-color: white;
+                display: block;
+                position: absolute;
+                bottom: 1rem;
+                opacity: 0.5;
+            }
+
+            &:last-of-type::after {
+                display: none;
+            }
+            
+        }
+
+        ul li a {
+            color: white;
+            display: inline-block;
+            padding: 2.3rem 0;
+            width: 100%;
+            
+            @include montserrat-bold(1.5rem);
+      
+        }
+
+    }
+
+    .close {
+        display: none;
+    }
+
+    label {
+        cursor: pointer;
+    }
+
+    #burger-input {
+        display: none;
+
+        &:checked ~ nav {
+            transform: scaleY(1);
+        }
+
+        &:checked ~ label {
+
+            & > .burger {
+                display: none;
+            }
+
+            & > .close {
+                display: block;
+            }
+        }
+    }
+
+    @media screen and (min-width: $desktop-breakpoint) { 
+        height: 9.5rem;
+        align-items: center;
+        align-content: center;
+        padding: 0 13rem 0 15rem;
+
+        label {
+            display: none;
+        }
+
+        &> a {
+            padding: 1rem 0 0 0;
+        }
+
+        nav {
+            transform: initial;
+            background-color: transparent;
+            width: auto;
+            height: auto;
+
+            ul {
+                display: flex;
+                align-items: center;
+            }
+
+            ul li {
+                display: inline-block;
+                text-transform: uppercase;
+                padding: 0 2rem;
+            }
+
+            ul li::after {
+                content: initial;
+            }
+
+            ul li a {
+                color: $purple-color;
+                position: relative;
+                cursor: pointer;
+
+                @include montserrat-bold(1.3rem)
+            }
+
+            ul li a.active {
+                color: $gray-color;
+            }
+
+            .mobile-create-gifo {
+                display: none;
+            }
+
+
+            .link-active {
+                color: $gray-color;
+            }
+
+            ul li:not(:last-of-type) a::after {
+                content: "";
+                display: block;
+                width: 100%;
+                height: 2px;
+                background-color: $lightblue-color;
+                bottom: 18px;
+                position: absolute;
+                transform: scaleX(0);
+                transition: transform 0.3s;
+                transform-origin: left;
+            }
+
+            ul li:not(:last-of-type) a:hover::after {
+                transform: scaleX(1);
+            }
+
+            span {
+                width: 16px;
+                height: 2px;
+                background-color: $purple-color;
+                display: block;
+                position: relative;
+                top:7px;
+            }
+
+            span::after {
+                content: "";
+                width: 2px;
+                height: 16px;
+                background-color: $purple-color;
+                display: block;
+                position: absolute;
+                transform-origin: center;
+                top: -7px;
+                left: 7px;
+            }
+
+            .button-crear-gifo {
+                padding: 1.8rem;
+                height: 54px;
+                width: 54px;
+                border-radius: 50%;
+                border: 1px solid $purple-color;
+                display: block;
+                transition: all 0.3s;
+            }
+
+            .button-crear-gifo-active {
+                background-color: $gray-color;
+                border: 1px solid $gray-color;
+            }
+
+            .button-crear-gifo-active > span {
+                background-color: #fff;
+            }
+
+            .button-crear-gifo-active > span::after {
+                background-color: #fff;
+            }
+
+            .button-crear-gifo:hover {
+                background-color: $purple-color;
+                border: 1px solid $purple-color;
+            }
+
+            .button-crear-gifo:hover > span {
+                background-color: #fff;
+            }
+
+            .button-crear-gifo:hover > span::after {
+                background-color: #fff;
+            }
+        }
+    }
+
+
+    @media screen and (min-width: 1180px) {
+        .form-scroll-show {
+            display: block;
+        }
+    }
+}

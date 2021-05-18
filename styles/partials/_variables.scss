@@ -1,0 +1,28 @@
+$purple-color: #572EE5;
+$lightblue-color: #5ED7C6;
+$gray-color: #9CAFC3;
+$gray-icon: invert(96%) sepia(23%) saturate(726%) hue-rotate(174deg) brightness(92%) contrast(90%);
+$purple-icon: invert(20%) sepia(91%) saturate(6063%) hue-rotate(254deg) brightness(92%) contrast(95%);
+$white-icon: invert(100%) sepia(0%) saturate(0%) hue-rotate(10deg) brightness(104%) contrast(102%);
+$desktop-breakpoint: 1000px;
+$tablet-breakpoint: 550px;
+
+// dark mode
+$dark-gray-color: #37383C;
+$dark-gray2-color: #222326;
+
+@mixin montserrat-medium($font-size) {
+    font: 500 $font-size 'Montserrat', sans-serif;
+}
+
+@mixin montserrat-bold($font-size) {
+    font: 700 $font-size 'Montserrat', sans-serif;
+}
+
+@mixin roboto-regular($font-size) {
+    font: 400 $font-size 'Roboto', sans-serif;
+}
+
+@mixin roboto-bold($font-size) {
+    font: 700 $font-size 'Roboto', sans-serif;
+}
